@@ -138,6 +138,7 @@
     total = 0;
     writeInputs(0);
     setInputsEnabled(true);
+    $("doneBanner").hidden = true;
     stopFlashTitle();
     render();
   }
