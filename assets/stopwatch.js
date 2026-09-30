@@ -26,8 +26,8 @@
     $("lapBtn").disabled = !running;
     $("resetBtn").disabled = running ? false : elapsed() === 0 && !laps.length;
     document.title = running
-      ? fmtStopwatch(elapsed()) + " \u00b7 Stopwatch \u2014 time tools"
-      : "Stopwatch \u2014 time tools";
+      ? fmtStopwatch(elapsed()) + " \u00b7 Stopwatch"
+      : "Stopwatch \u00b7 time tools";
   }
 
   function loop() {

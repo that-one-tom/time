@@ -43,11 +43,11 @@
       const left = Math.max(0, endTs - Date.now());
       clock.textContent = fmtMS(left);
       clock.classList.remove("done");
-      document.title = fmtMS(left) + " \u00b7 Timer \u2014 time tools";
+      document.title = fmtMS(left) + " \u00b7 Timer";
     } else {
       clock.textContent = fmtMS(remaining || total);
       clock.classList.toggle("done", false);
-      if (!tickTimer) document.title = "Timer \u2014 time tools";
+      if (!tickTimer) document.title = "Timer \u00b7 time tools";
     }
 
     const phase = $("timerPhase");
@@ -121,7 +121,7 @@
     $("resetBtn").disabled = false;
     $("plusBtn").disabled = true;
     $("doneBanner").hidden = false;
-    document.title = "Timer \u2014 time tools";
+    document.title = "Timer \u00b7 time tools";
   }
 
   function runAgain() {

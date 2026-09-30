@@ -78,10 +78,10 @@
     }
 
     $("startBtn").textContent = running ? "Pause" : (left < duration ? "Resume" : "Start");
-    $("doneCount").textContent = completed + " pomodoro" + (completed === 1 ? "" : "s") + " completed all-time";
+    $("doneCount").textContent = completed + " pomodoro" + (completed === 1 ? "" : "s") + " completed in total";
     document.title = running
-      ? fmtMS(left) + " \u00b7 " + MODES[mode].label + " \u2014 Pomodoro"
-      : "Pomodoro \u2014 time tools";
+      ? fmtMS(left) + " \u00b7 " + MODES[mode].label
+      : "Pomodoro timer \u00b7 time tools";
   }
 
   /* ---------------- engine ---------------- */
@@ -143,7 +143,7 @@
       setMode(next, settings.autoStartBreaks);
     } else {
       notify("Break over", "Back to focus!");
-      flashTitle("\u23f0 Break over \u2014 back to work!");
+      flashTitle("\u23f0 Break over, back to work!");
       setMode("focus", settings.autoStartFocus);
     }
     setTimeout(stopFlashTitle, 8000);

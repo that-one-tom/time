@@ -202,7 +202,7 @@
     if (!zones.length) {
       const empty = document.createElement("div");
       empty.className = "tz-empty";
-      empty.textContent = "No cities on the board — add one above to get started.";
+      empty.textContent = "No cities on the board. Add one above to get started.";
       board.appendChild(empty);
     }
     renderAll();
@@ -218,7 +218,7 @@
     } else {
       liveChip.innerHTML = "\u21ba Back to now";
       liveChip.className = "chip chip-accent";
-      liveChip.title = "Clocks are paused on a chosen moment — click to jump back to live time";
+      liveChip.title = "Clocks are paused on a chosen moment. Click to jump back to live time";
     }
   }
 
@@ -330,7 +330,7 @@
       ? location.origin + location.pathname + "?" + params.toString()
       : location.href.split("?")[0] + "?" + params.toString();
     copyText(url).then(
-      () => toast("Link copied — share it to line up this moment"),
+      () => toast("Link copied. Share it to line up this moment"),
       () => toast("Couldn't access the clipboard")
     );
   }
