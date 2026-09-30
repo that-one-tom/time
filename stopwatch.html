@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stopwatch — time tools</title>
+  <meta name="description" content="A free stopwatch with centisecond precision, lap tracking and fastest/slowest lap highlighting.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ccircle%20cx='50'%20cy='50'%20r='44'%20fill='%231c1208'%20stroke='%23ff8c42'%20stroke-width='8'/%3E%3Cline%20x1='50'%20y1='52'%20x2='50'%20y2='30'%20stroke='%23ff8c42'%20stroke-width='7'%20stroke-linecap='round'%20transform='rotate(45%2050%2052)'/%3E%3Cline%20x1='50'%20y1='52'%20x2='50'%20y2='24'%20stroke='%23ff8c42'%20stroke-width='7'%20stroke-linecap='round'%20transform='rotate(210%2050%2052)'/%3E%3Ccircle%20cx='50'%20cy='52'%20r='5'%20fill='%23ff8c42'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topnav">
+    <div class="topnav-inner">
+      <a class="brand" href="index.html"><span class="dot"></span>time tools</a>
+      <nav class="navlinks">
+        <a href="timezones.html">World clock</a>
+        <a href="pomodoro.html">Pomodoro</a>
+        <a href="timer.html">Timer</a>
+        <a class="active" href="stopwatch.html" aria-current="page">Stopwatch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1 class="page-title">Stopwatch</h1>
+    <p class="page-sub">
+      Centisecond precision that never drifts, with lap tracking and
+      fastest/slowest lap highlighting.
+    </p>
+
+    <div class="card tool-hero">
+      <div class="sub-label">stopwatch</div>
+      <div id="swClock" class="big-clock">00:00.00</div>
+
+      <div class="controls">
+        <button id="startBtn" class="btn btn-primary" type="button">Start</button>
+        <button id="lapBtn" class="btn" type="button" disabled>Lap</button>
+        <button id="resetBtn" class="btn" type="button" disabled>Reset</button>
+      </div>
+
+      <div id="laps" class="laps" hidden></div>
+    </div>
+
+    <p class="kbd-hint"><kbd>Space</kbd> start / stop &nbsp;·&nbsp; <kbd>L</kbd> lap &nbsp;·&nbsp; <kbd>R</kbd> reset</p>
+  </main>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/stopwatch.js"></script>
+</body>
+</html>

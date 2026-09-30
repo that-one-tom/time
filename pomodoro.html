@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pomodoro timer — time tools</title>
+  <meta name="description" content="A free pomodoro timer: 25 minutes of focus, 5-minute breaks and a long break every few rounds. Configurable durations, sound and auto-start.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ccircle%20cx='50'%20cy='50'%20r='44'%20fill='%231c1208'%20stroke='%23ff8c42'%20stroke-width='8'/%3E%3Cline%20x1='50'%20y1='52'%20x2='50'%20y2='30'%20stroke='%23ff8c42'%20stroke-width='7'%20stroke-linecap='round'%20transform='rotate(45%2050%2052)'/%3E%3Cline%20x1='50'%20y1='52'%20x2='50'%20y2='24'%20stroke='%23ff8c42'%20stroke-width='7'%20stroke-linecap='round'%20transform='rotate(210%2050%2052)'/%3E%3Ccircle%20cx='50'%20cy='52'%20r='5'%20fill='%23ff8c42'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topnav">
+    <div class="topnav-inner">
+      <a class="brand" href="index.html"><span class="dot"></span>time tools</a>
+      <nav class="navlinks">
+        <a href="timezones.html">World clock</a>
+        <a class="active" href="pomodoro.html" aria-current="page">Pomodoro</a>
+        <a href="timer.html">Timer</a>
+        <a href="stopwatch.html">Stopwatch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1 class="page-title">Pomodoro timer</h1>
+    <p class="page-sub">
+      Work in focused sprints: 25 minutes of focus, a 5-minute break, and a
+      long break every four rounds. Everything is configurable below.
+    </p>
+
+    <div class="card tool-hero">
+      <div class="ring-wrap">
+        <svg width="280" height="280" viewBox="0 0 280 280" aria-hidden="true">
+          <circle class="ring-bg" cx="140" cy="140" r="120"></circle>
+          <circle id="ringFg" class="ring-fg" cx="140" cy="140" r="120"></circle>
+        </svg>
+        <div class="ring-center">
+          <span id="modeLabel" class="chip chip-accent">Focus</span>
+          <div id="pomoTime" class="big-clock">25:00</div>
+          <div id="pomoDots" class="pomo-dots" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn" class="btn btn-primary" type="button">Start</button>
+        <button id="resetBtn" class="btn" type="button">Reset</button>
+        <button id="skipBtn" class="btn" type="button" title="Jump to the next session">Skip</button>
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-ghost" type="button" data-mode="focus">Focus</button>
+        <button class="btn btn-ghost" type="button" data-mode="short">Short break</button>
+        <button class="btn btn-ghost" type="button" data-mode="long">Long break</button>
+      </div>
+
+      <p class="sub-label" id="doneCount"></p>
+    </div>
+
+    <details class="settings card">
+      <summary>Settings</summary>
+      <div class="settings-grid">
+        <label>Focus (minutes)
+          <input id="setFocus" type="number" min="1" max="600">
+        </label>
+        <label>Short break (minutes)
+          <input id="setShort" type="number" min="1" max="600">
+        </label>
+        <label>Long break (minutes)
+          <input id="setLong" type="number" min="1" max="600">
+        </label>
+        <label>Long break every
+          <input id="setEvery" type="number" min="1" max="12">
+        </label>
+        <label class="check"><input id="setAutoBreaks" type="checkbox"> Auto-start breaks</label>
+        <label class="check"><input id="setAutoFocus" type="checkbox"> Auto-start focus sessions</label>
+        <label class="check"><input id="setSound" type="checkbox"> Sound</label>
+      </div>
+    </details>
+
+    <p class="kbd-hint"><kbd>Space</kbd> start / pause &nbsp;·&nbsp; <kbd>R</kbd> reset &nbsp;·&nbsp; <kbd>S</kbd> skip</p>
+  </main>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/pomodoro.js"></script>
+</body>
+</html>

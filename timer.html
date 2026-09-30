@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timer — time tools</title>
+  <meta name="description" content="A free countdown timer: pick hours, minutes and seconds or a quick preset. Accurate even in background tabs, with a chime when it's done.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ccircle%20cx='50'%20cy='50'%20r='44'%20fill='%231c1208'%20stroke='%23ff8c42'%20stroke-width='8'/%3E%3Cline%20x1='50'%20y1='52'%20x2='50'%20y2='30'%20stroke='%23ff8c42'%20stroke-width='7'%20stroke-linecap='round'%20transform='rotate(45%2050%2052)'/%3E%3Cline%20x1='50'%20y1='52'%20x2='50'%20y2='24'%20stroke='%23ff8c42'%20stroke-width='7'%20stroke-linecap='round'%20transform='rotate(210%2050%2052)'/%3E%3Ccircle%20cx='50'%20cy='52'%20r='5'%20fill='%23ff8c42'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topnav">
+    <div class="topnav-inner">
+      <a class="brand" href="index.html"><span class="dot"></span>time tools</a>
+      <nav class="navlinks">
+        <a href="timezones.html">World clock</a>
+        <a href="pomodoro.html">Pomodoro</a>
+        <a class="active" href="timer.html" aria-current="page">Timer</a>
+        <a href="stopwatch.html">Stopwatch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1 class="page-title">Timer</h1>
+    <p class="page-sub">
+      A plain countdown timer. Pick a duration or use a quick preset — it uses
+      an exact end timestamp, so it stays accurate even when the tab is in the
+      background.
+    </p>
+
+    <div class="card tool-hero">
+      <div id="doneBanner" class="banner" hidden>
+        <span>⏰ Time's up!</span>
+        <div class="controls">
+          <button id="againBtn" class="btn btn-primary btn-small" type="button">Run again</button>
+          <button id="dismissBtn" class="btn btn-ghost btn-small" type="button">Dismiss</button>
+        </div>
+      </div>
+
+      <div id="timerPhase" class="sub-label">ready</div>
+      <div id="timerClock" class="big-clock">00:00</div>
+
+      <div class="time-inputs">
+        <div class="unit"><input id="inH" type="number" min="0" max="99" value="0" aria-label="hours"><label>hours</label></div>
+        <div class="unit"><input id="inM" type="number" min="0" max="59" value="0" aria-label="minutes"><label>minutes</label></div>
+        <div class="unit"><input id="inS" type="number" min="0" max="59" value="0" aria-label="seconds"><label>seconds</label></div>
+      </div>
+
+      <div class="presets" id="presets"></div>
+
+      <div class="controls">
+        <button id="startBtn" class="btn btn-primary" type="button">Start</button>
+        <button id="plusBtn" class="btn" type="button" title="Add one minute to the countdown">+1 min</button>
+        <button id="resetBtn" class="btn" type="button">Reset</button>
+      </div>
+    </div>
+
+    <p class="kbd-hint"><kbd>Space</kbd> start / pause &nbsp;·&nbsp; <kbd>R</kbd> reset</p>
+  </main>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/timer.js"></script>
+</body>
+</html>
